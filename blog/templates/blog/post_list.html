@@ -4,17 +4,15 @@
     </head>
     <body>
         <div>
-            <h1><a href="/">Kağan</a></h1>
+            <h1><a href="/">Django Boys Blog</a></h1>
         </div>
-        <div>
-            <p>yayınlanma: 6.11.2021, 17:15</p>
-            <h2><a href="">İlk Blog</a></h2>
-            <p>İlk Blog</p>
-        </div>
-        <div>
-            <p>yayınlanma: 6.11.2021, 17:20</p>
-            <h2><a href="">İkinci Blog</a></h2>
-            <p>Heyyoevrenheyyoevren</p>
-         </div>
+
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
